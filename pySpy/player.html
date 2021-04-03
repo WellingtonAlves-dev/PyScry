@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player pySpy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .header > h1 {
+            font-size: 42px;
+            cursor: pointer;
+        }
+        .red {
+            color: red;
+        }
+        .container {
+            margin: 20px;
+        }
+        .row {
+            display: flex;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 onclick="openGit()"><span class="red">Py</span>Spy</h1>
+        <small>Python screen spy</small>
+    </div>
+    <div class="container">
+        <div class="row" id='live'>
+            <img src="player.jpg" style="height: 600px; width: 100%;">
+        </div>
+        <div class="row" id='options'>
+            <button onclick="live()">Player</button>
+            <button onclick="stop()">Stop</button>
+        </div>
+    </div>
+    <script>
+        live()
+        var interval;
+        function openGit() {
+            window.open("https://github.com/wellingtonAlves-dev", "_blank")
+        }
+        //1 Live
+        //2 galery
+        function live() {
+            interval = setInterval(() => {
+                window.location.reload()
+            }, 1000)
+        }
+        function stop() {
+            clearInterval(interval)
+        }
+    </script>
+</body>
+</html>
